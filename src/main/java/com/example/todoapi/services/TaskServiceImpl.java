@@ -1,9 +1,11 @@
 package com.example.todoapi.services;
 
 import com.example.todoapi.entity.Task;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TaskServiceImpl implements TaskService {
     @Override
     public List<Task> GetTaskAll() {
