@@ -20,17 +20,23 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<Task> PostTask(Task task) {
-        
-        return taskRepository.findAll();
+        taskRepository.save(task);
+        return GetTaskAll();
     }
 
     @Override
     public List<Task> DeleteTask(Long id) {
-        return null;
+        taskRepository.deleteById(id);
+        return GetTaskAll();
     }
 
     @Override
     public List<Task> PutTask(Task task, Long id) {
-        return null;
+        Task taskPut = taskRepository.findById(id).get();
+        if (taskPut.getId() != null) {
+            taskPut.setName(task.getName());
+            taskRepository.save(taskPut);
+        }
+        return GetTaskAll();
     }
 }
