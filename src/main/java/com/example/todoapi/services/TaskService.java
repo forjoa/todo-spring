@@ -7,7 +7,7 @@ import java.util.List;
 public interface TaskService {
     List<Task> GetTaskAll();
 
-    String PostTask(Task task);
+    List<Task> PostTask(Task task);
 
     List<Task> DeleteTask(Long id);
 

@@ -22,7 +22,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public ResponseEntity<String> postTask(@RequestBody Task task) {
+    public ResponseEntity<List<Task>> postTask(@RequestBody Task task) {
         return ResponseEntity.ok(taskService.PostTask(task));
     }
 
